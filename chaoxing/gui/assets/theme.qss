@@ -1,0 +1,115 @@
+/* Base palette - macOS-inspired neutral with subtle accents */
+* {
+  font-family: "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial;
+  font-size: 14px;
+  color: #0f0f0f;
+}
+
+QMainWindow {
+  background: #f5f6f7;
+}
+
+/* Header bar */
+#HeaderBar {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 #fbfbfc, stop:1 #eceef0);
+  border-bottom: 1px solid #dfe3e6;
+}
+
+QLabel#HeaderTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f1115;
+}
+
+/* Cards */
+QGroupBox {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+QGroupBox::title {
+  subcontrol-origin: margin;
+  left: 14px;
+  padding: 4px 6px;
+  color: #0f1115;
+  font-weight: 600;
+}
+
+/* Inputs */
+QLineEdit, QComboBox, QDoubleSpinBox, QSpinBox, QListWidget, QTextEdit {
+  background: #fbfbfd;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 8px 10px;
+  selection-background-color: #007aff22;
+  selection-color: #0f0f0f;
+}
+QListWidget {
+  padding: 8px;
+}
+QScrollBar:vertical {
+  background: transparent;
+  width: 10px;
+  margin: 4px 4px 4px 4px;
+}
+QScrollBar::handle:vertical {
+  background: #cfd4da;
+  border-radius: 5px;
+  min-height: 24px;
+}
+QScrollBar::handle:vertical:hover {
+  background: #b9bec5;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+  height: 0px;
+}
+
+/* Buttons - macOS accent (blue) with soft hover */
+QPushButton {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 #409cff, stop:1 #007aff);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-weight: 600;
+}
+QPushButton:hover {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 #53a6ff, stop:1 #1a83ff);
+}
+QPushButton:pressed {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 #2e8cff, stop:1 #0068dc);
+}
+QPushButton:disabled {
+  background: #c9cdd3;
+  color: #f7f8fa;
+}
+
+/* Secondary buttons */
+QPushButton#Secondary {
+  background: #ffffff;
+  color: #0f1115;
+  border: 1px solid #e5e7eb;
+}
+QPushButton#Secondary:hover {
+  background: #f5f6f7;
+}
+
+/* Splitter handle subtle */
+QSplitter::handle:vertical {
+  height: 8px;
+  background: #f0f2f5;
+}
+
+/* LogView */
+QTextEdit {
+  background: #0b0c0e;
+  color: #f1f2f4;
+  border-radius: 10px;
+}
+
+

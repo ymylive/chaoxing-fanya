@@ -1,0 +1,287 @@
+/* Advanced Premium Theme - macOS inspired with elegant animations */
+
+/* Global settings */
+* {
+  font-family: "SF Pro Display", "PingFang SC", "Microsoft YaHei UI", "Segoe UI", sans-serif;
+  font-size: 14px;
+  color: #1d1d1f;
+  outline: none;
+}
+
+/* Main Window */
+QMainWindow {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 #f5f6f7, stop:1 #e8eaed);
+}
+
+/* Header Bar */
+#HeaderBar {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(255, 255, 255, 0.95), 
+    stop:1 rgba(248, 249, 250, 0.95));
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(20px);
+  min-height: 50px;
+}
+
+QLabel#HeaderTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1d1d1f;
+  letter-spacing: -0.5px;
+}
+
+/* Premium Cards with Glass Effect */
+QGroupBox {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(255, 255, 255, 0.9),
+    stop:1 rgba(255, 255, 255, 0.8));
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding-top: 6px;
+  backdrop-filter: blur(20px);
+}
+
+QGroupBox::title {
+  subcontrol-origin: margin;
+  left: 18px;
+  top: 8px;
+  padding: 6px 12px;
+  color: #1d1d1f;
+  font-weight: 600;
+  font-size: 15px;
+  background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+    stop:0 rgba(0, 122, 255, 0.1),
+    stop:1 rgba(88, 86, 214, 0.1));
+  border-radius: 8px;
+  border: 1px solid rgba(0, 122, 255, 0.2);
+}
+
+/* Enhanced Input Fields */
+QLineEdit, QComboBox, QDoubleSpinBox, QSpinBox {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  selection-background-color: rgba(0, 122, 255, 0.2);
+  selection-color: #1d1d1f;
+  min-height: 12px;
+}
+
+QLineEdit:focus, QComboBox:focus, QDoubleSpinBox:focus, QSpinBox:focus {
+  border: 2px solid rgba(0, 122, 255, 0.6);
+  background: rgba(255, 255, 255, 1.0);
+}
+
+QLineEdit:hover, QComboBox:hover, QDoubleSpinBox:hover, QSpinBox:hover {
+  border: 2px solid rgba(0, 122, 255, 0.3);
+  background: rgba(255, 255, 255, 1.0);
+}
+
+/* Premium Buttons */
+QPushButton {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 #007aff, stop:0.5 #0051d5, stop:1 #003d9a);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.1px;
+  min-height: 18px;
+}
+
+QPushButton:hover {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 #1a8cff, stop:0.5 #0f5ce6, stop:1 #0a47ab);
+  transform: translateY(-1px);
+}
+
+QPushButton:pressed {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 #0066cc, stop:0.5 #004bb8, stop:1 #003889);
+  transform: translateY(1px);
+}
+
+QPushButton:disabled {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 #d1d5db, stop:1 #9ca3af);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Secondary Buttons */
+QPushButton#Secondary {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(255, 255, 255, 0.95),
+    stop:1 rgba(248, 249, 250, 0.95));
+  color: #1d1d1f;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  font-weight: 500;
+}
+
+QPushButton#Secondary:hover {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(248, 249, 250, 0.98),
+    stop:1 rgba(241, 243, 244, 0.98));
+  border: 2px solid rgba(0, 122, 255, 0.3);
+}
+
+QPushButton#Secondary:pressed {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(241, 243, 244, 1.0),
+    stop:1 rgba(229, 231, 235, 1.0));
+}
+
+/* Enhanced List Widget */
+QListWidget {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 8px;
+  selection-background-color: rgba(0, 122, 255, 0.1);
+  alternate-background-color: rgba(248, 249, 250, 0.5);
+}
+
+QListWidget::item {
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 2px 0px;
+  font-weight: 500;
+}
+
+QListWidget::item:hover {
+  background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+    stop:0 rgba(0, 122, 255, 0.08),
+    stop:1 rgba(88, 86, 214, 0.08));
+  border: 1px solid rgba(0, 122, 255, 0.2);
+}
+
+QListWidget::item:selected {
+  background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+    stop:0 rgba(0, 122, 255, 0.15),
+    stop:1 rgba(88, 86, 214, 0.15));
+  border: 1px solid rgba(0, 122, 255, 0.4);
+  color: #1d1d1f;
+}
+
+/* Premium Scrollbars */
+QScrollBar:vertical {
+  background: transparent;
+  width: 8px;
+  margin: 0px;
+  border-radius: 4px;
+}
+
+QScrollBar::handle:vertical {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  min-height: 24px;
+}
+
+QScrollBar::handle:vertical:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+QScrollBar::handle:vertical:pressed {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+  height: 0px;
+}
+
+/* Dark Text Editor for Logs */
+QTextEdit {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 #2d3748, stop:1 #1a202c);
+  color: #e2e8f0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  font-family: "SF Mono", "Monaco", "Consolas", monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  selection-background-color: rgba(66, 153, 225, 0.3);
+}
+
+/* Splitter Handle */
+QSplitter::handle:vertical {
+  height: 12px;
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(0, 0, 0, 0.05),
+    stop:0.5 rgba(0, 0, 0, 0.02),
+    stop:1 rgba(0, 0, 0, 0.05));
+  border-radius: 6px;
+  margin: 2px 8px;
+}
+
+QSplitter::handle:vertical:hover {
+  background: rgba(0, 122, 255, 0.2);
+}
+
+/* Toast Overlay */
+#Toast {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 rgba(0, 0, 0, 0.85),
+    stop:1 rgba(0, 0, 0, 0.75));
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 16px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  backdrop-filter: blur(20px);
+}
+
+/* Checkbox Styling */
+QCheckBox {
+  spacing: 8px;
+  font-weight: 500;
+}
+
+QCheckBox::indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+QCheckBox::indicator:hover {
+  border: 2px solid rgba(0, 122, 255, 0.6);
+}
+
+QCheckBox::indicator:checked {
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    stop:0 #007aff, stop:1 #0051d5);
+  border: 2px solid #007aff;
+  image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xIDQuNUw0LjUgOEwxMSAxIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K);
+}
+
+/* Combo Box Dropdown */
+QComboBox::drop-down {
+  border: none;
+  width: 20px;
+}
+
+QComboBox::down-arrow {
+  width: 12px;
+  height: 12px;
+  image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xIDFMNiA2TDExIDEiIHN0cm9rZT0iIzFkMWQxZiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+);
+}
+
+/* Loading Animation */
+#BusyIndicator {
+  color: rgba(0, 122, 255, 0.8);
+  font-size: 16px;
+  font-weight: 600;
+}
+

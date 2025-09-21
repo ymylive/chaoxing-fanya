@@ -1,0 +1,168 @@
+2025-09-21 10:18:25.830 | INFO     | gui.main_gui:_on_login_clicked:442 - GUI: 登录按钮点击, user=190****53, proxy=none
+2025-09-21 10:18:25.833 | TRACE    | gui.main_gui:run:769 - LoginWorker: start
+2025-09-21 10:18:26.227 | ERROR    | gui.main_gui:run:805 - LoginWorker: exception -> '🏪 无'
+2025-09-21 10:26:02.341 | INFO     | gui.main_gui:_on_login_clicked:463 - GUI: 登录按钮点击, user=190****53, proxy=none
+2025-09-21 10:26:02.345 | TRACE    | gui.main_gui:run:790 - LoginWorker: start
+2025-09-21 10:26:02.740 | ERROR    | api.answer:get_tiku_from_config:177 - 未找到题库配置, 已忽略题库功能
+2025-09-21 10:26:02.741 | TRACE    | api.base:login:97 - login(): using proxy=None
+2025-09-21 10:26:02.741 | TRACE    | api.base:login:98 - login(): begin
+2025-09-21 10:26:02.741 | TRACE    | api.base:login:101 - 正在尝试新版登录API...
+2025-09-21 10:26:02.744 | TRACE    | api.base:login:116 - login(new): url=https://passport2-api.chaoxing.com/v11/loginregister, headers=['User-Agent', 'Sec-Ch-Ua'], params={'code':'***','uname': '***', 'loginType':'1', 'roleSelect':'true'}
+2025-09-21 10:26:02.919 | TRACE    | api.base:login:122 - login(new): status=200, json={'mes': '账号或密码错误', 'status': False}
+2025-09-21 10:26:02.919 | WARNING  | api.base:login:132 - login(new): 失败，将回退旧版: 账号或密码错误
+2025-09-21 10:26:02.919 | TRACE    | api.base:login:141 - 正在尝试旧版登录API...
+2025-09-21 10:26:02.920 | TRACE    | api.base:login:154 - login(old): url=https://passport2.chaoxing.com/fanyalogin, headers=['User-Agent', 'Sec-Ch-Ua'], data_keys=['fid', 'uname', 'password', 'refer', 't', 'forbidotherlogin', 'validate', 'doubleFactorLogin', 'independentId']
+2025-09-21 10:26:03.099 | TRACE    | api.base:login:159 - login(old): status=200, json={'url': 'https%3A%2F%2Fi.chaoxing.com', 'status': True}
+2025-09-21 10:26:03.101 | INFO     | api.base:login:165 - 旧版API登录成功...
+2025-09-21 10:26:03.101 | TRACE    | api.base:login:166 - login(old): cookies_keys=['JSESSIONID', 'route', 'fid', '_uid', '_d', 'UID', 'vc3', 'uf', 'cx_p_token', 'p_auth_token', 'xxtenc', 'DSSTASH_LOG']
+2025-09-21 10:26:03.103 | TRACE    | api.base:get_course_list:195 - 正在尝试新版课程列表API...
+2025-09-21 10:26:03.103 | TRACE    | api.base:get_course_list:205 - courses(new): url=http://mooc1-api.chaoxing.com/mycourse/backclazzdata, headers=['User-Agent', 'Accept', 'Referer'], params={'view': 'json', 'rss': '1'}
+2025-09-21 10:26:03.262 | INFO     | api.base:get_course_list:209 - 新版课程列表API读取完毕...
+2025-09-21 10:26:03.262 | TRACE    | api.base:get_course_list:210 - courses(new): status=200, text_head={"result":1,"msg":"获取成功","channelList":[{"cfid":-1,"norder":13,"cataName":"课程","cataid":"100000002","id":0,"cpi":487121512,"key":128886817,"content":{"studentcount":408,"chatid":"292225744437251","isFiled":0,"isthirdaq":0,"isstart":true,"isretire":1,"name":"默认班级","course":{"data":[{"createtime":1758086587000,"defaultShowCatalog":0,"sectionId":0,"smartCourseState":0,"appData":0,"belongSchoolId":"0","coursestate":0,"teacherfactor":"孟莹莹","isCourseSquare":0,"courseSquareUrl":"https://tsjy.chaoxing.c...
+2025-09-21 10:26:03.262 | TRACE    | api.base:get_course_list:239 - 正在尝试旧版课程列表API...
+2025-09-21 10:26:03.262 | TRACE    | api.base:get_course_list:259 - courses(old): url=https://mooc2-ans.chaoxing.com/mooc2-ans/visit/courselistdata, headers=['Host', 'sec-ch-ua-platform', 'X-Requested-With', 'User-Agent', 'Accept', 'sec-ch-ua', 'Content-Type', 'sec-ch-ua-mobile', 'Origin', 'Sec-Fetch-Site', 'Sec-Fetch-Mode', 'Sec-Fetch-Dest', 'Referer', 'Accept-Language'], data={'courseType': 1, 'courseFolderId': 0, 'query': '', 'superstarClass': 0}
+2025-09-21 10:26:03.567 | INFO     | api.base:get_course_list:262 - 旧版课程列表读取完毕...
+2025-09-21 10:26:03.567 | TRACE    | api.base:get_course_list:263 - courses(old): status=200, text_head=<!--无课程提示-->
+    <div class="null-data" style="display: none;">暂无课程</div>
+    <div class="path-box clear">
+        <ul class="breadcrumb fl"  style="display:none;"   id="courseNav">
+            <li><a href="javascript:void(0)"  onclick="searchAllCourse()" >全部课程</a></li>
+                <li></li>
+            <li class="active"></li>
+        </ul>
+    </div>
+
+    <div>
+        <div class="course-list" id="courseList">
+            <div id="stuTopCourseListDiv">
+            </div>
+
+            <div ...
+2025-09-21 10:26:03.568 | TRACE    | api.decode:decode_course_list:26 - 开始解码课程列表...
+2025-09-21 10:26:03.697 | TRACE    | api.decode:decode_course_folder:62 - 开始解码二级课程列表...
+2025-09-21 10:26:03.700 | INFO     | gui.main_gui:run:831 - LoginWorker: courses_count=11
+2025-09-21 10:26:36.889 | INFO     | gui.main_gui:_on_login_clicked:463 - GUI: 登录按钮点击, user=190****53, proxy=none
+2025-09-21 10:26:36.893 | TRACE    | gui.main_gui:run:790 - LoginWorker: start
+2025-09-21 10:26:37.289 | ERROR    | api.answer:get_tiku_from_config:177 - 未找到题库配置, 已忽略题库功能
+2025-09-21 10:26:37.290 | TRACE    | api.base:login:97 - login(): using proxy=None
+2025-09-21 10:26:37.290 | TRACE    | api.base:login:98 - login(): begin
+2025-09-21 10:26:37.290 | TRACE    | api.base:login:101 - 正在尝试新版登录API...
+2025-09-21 10:26:37.291 | TRACE    | api.base:login:116 - login(new): url=https://passport2-api.chaoxing.com/v11/loginregister, headers=['User-Agent', 'Sec-Ch-Ua'], params={'code':'***','uname': '***', 'loginType':'1', 'roleSelect':'true'}
+2025-09-21 10:26:37.384 | TRACE    | api.base:login:122 - login(new): status=200, json={'mes': '账号或密码错误', 'status': False}
+2025-09-21 10:26:37.384 | WARNING  | api.base:login:132 - login(new): 失败，将回退旧版: 账号或密码错误
+2025-09-21 10:26:37.384 | TRACE    | api.base:login:141 - 正在尝试旧版登录API...
+2025-09-21 10:26:37.385 | TRACE    | api.base:login:154 - login(old): url=https://passport2.chaoxing.com/fanyalogin, headers=['User-Agent', 'Sec-Ch-Ua'], data_keys=['fid', 'uname', 'password', 'refer', 't', 'forbidotherlogin', 'validate', 'doubleFactorLogin', 'independentId']
+2025-09-21 10:26:37.478 | TRACE    | api.base:login:159 - login(old): status=200, json={'url': 'https%3A%2F%2Fi.chaoxing.com', 'status': True}
+2025-09-21 10:26:37.479 | INFO     | api.base:login:165 - 旧版API登录成功...
+2025-09-21 10:26:37.480 | TRACE    | api.base:login:166 - login(old): cookies_keys=['JSESSIONID', 'route', 'fid', '_uid', '_d', 'UID', 'vc3', 'uf', 'cx_p_token', 'p_auth_token', 'xxtenc', 'DSSTASH_LOG']
+2025-09-21 10:26:37.481 | TRACE    | api.base:get_course_list:195 - 正在尝试新版课程列表API...
+2025-09-21 10:26:37.481 | TRACE    | api.base:get_course_list:205 - courses(new): url=http://mooc1-api.chaoxing.com/mycourse/backclazzdata, headers=['User-Agent', 'Accept', 'Referer'], params={'view': 'json', 'rss': '1'}
+2025-09-21 10:26:37.552 | INFO     | api.base:get_course_list:209 - 新版课程列表API读取完毕...
+2025-09-21 10:26:37.552 | TRACE    | api.base:get_course_list:210 - courses(new): status=200, text_head={"result":1,"msg":"获取成功","channelList":[{"cfid":-1,"norder":13,"cataName":"课程","cataid":"100000002","id":0,"cpi":487121512,"key":128886817,"content":{"studentcount":408,"chatid":"292225744437251","isFiled":0,"isthirdaq":0,"isstart":true,"isretire":1,"name":"默认班级","course":{"data":[{"createtime":1758086587000,"defaultShowCatalog":0,"sectionId":0,"smartCourseState":0,"appData":0,"belongSchoolId":"0","coursestate":0,"teacherfactor":"孟莹莹","isCourseSquare":0,"courseSquareUrl":"https://tsjy.chaoxing.c...
+2025-09-21 10:26:37.553 | TRACE    | api.base:get_course_list:239 - 正在尝试旧版课程列表API...
+2025-09-21 10:26:37.553 | TRACE    | api.base:get_course_list:259 - courses(old): url=https://mooc2-ans.chaoxing.com/mooc2-ans/visit/courselistdata, headers=['Host', 'sec-ch-ua-platform', 'X-Requested-With', 'User-Agent', 'Accept', 'sec-ch-ua', 'Content-Type', 'sec-ch-ua-mobile', 'Origin', 'Sec-Fetch-Site', 'Sec-Fetch-Mode', 'Sec-Fetch-Dest', 'Referer', 'Accept-Language'], data={'courseType': 1, 'courseFolderId': 0, 'query': '', 'superstarClass': 0}
+2025-09-21 10:26:37.698 | INFO     | api.base:get_course_list:262 - 旧版课程列表读取完毕...
+2025-09-21 10:26:37.698 | TRACE    | api.base:get_course_list:263 - courses(old): status=200, text_head=<!--无课程提示-->
+    <div class="null-data" style="display: none;">暂无课程</div>
+    <div class="path-box clear">
+        <ul class="breadcrumb fl"  style="display:none;"   id="courseNav">
+            <li><a href="javascript:void(0)"  onclick="searchAllCourse()" >全部课程</a></li>
+                <li></li>
+            <li class="active"></li>
+        </ul>
+    </div>
+
+    <div>
+        <div class="course-list" id="courseList">
+            <div id="stuTopCourseListDiv">
+            </div>
+
+            <div ...
+2025-09-21 10:26:37.699 | TRACE    | api.decode:decode_course_list:26 - 开始解码课程列表...
+2025-09-21 10:26:37.797 | TRACE    | api.decode:decode_course_folder:62 - 开始解码二级课程列表...
+2025-09-21 10:26:37.799 | INFO     | gui.main_gui:run:831 - LoginWorker: courses_count=11
+2025-09-21 10:26:42.710 | ERROR    | api.answer:get_tiku_from_config:177 - 未找到题库配置, 已忽略题库功能
+2025-09-21 10:26:42.711 | TRACE    | api.base:login:97 - login(): using proxy=None
+2025-09-21 10:26:42.711 | TRACE    | api.base:login:98 - login(): begin
+2025-09-21 10:26:42.711 | TRACE    | api.base:login:101 - 正在尝试新版登录API...
+2025-09-21 10:26:42.711 | TRACE    | api.base:login:116 - login(new): url=https://passport2-api.chaoxing.com/v11/loginregister, headers=['User-Agent', 'Sec-Ch-Ua'], params={'code':'***','uname': '***', 'loginType':'1', 'roleSelect':'true'}
+2025-09-21 10:26:42.800 | TRACE    | api.base:login:122 - login(new): status=200, json={'mes': '账号或密码错误', 'status': False}
+2025-09-21 10:26:42.800 | WARNING  | api.base:login:132 - login(new): 失败，将回退旧版: 账号或密码错误
+2025-09-21 10:26:42.801 | TRACE    | api.base:login:141 - 正在尝试旧版登录API...
+2025-09-21 10:26:42.801 | TRACE    | api.base:login:154 - login(old): url=https://passport2.chaoxing.com/fanyalogin, headers=['User-Agent', 'Sec-Ch-Ua'], data_keys=['fid', 'uname', 'password', 'refer', 't', 'forbidotherlogin', 'validate', 'doubleFactorLogin', 'independentId']
+2025-09-21 10:26:42.898 | TRACE    | api.base:login:159 - login(old): status=200, json={'url': 'https%3A%2F%2Fi.chaoxing.com', 'status': True}
+2025-09-21 10:26:42.899 | INFO     | api.base:login:165 - 旧版API登录成功...
+2025-09-21 10:26:42.899 | TRACE    | api.base:login:166 - login(old): cookies_keys=['JSESSIONID', 'route', 'fid', '_uid', '_d', 'UID', 'vc3', 'uf', 'cx_p_token', 'p_auth_token', 'xxtenc', 'DSSTASH_LOG']
+2025-09-21 10:26:42.900 | INFO     | chaoxing.main:process_course:292 - 开始学习课程: 软件学院25级
+2025-09-21 10:26:42.901 | TRACE    | api.base:get_course_point:283 - 开始读取课程所有章节...
+2025-09-21 10:26:43.046 | INFO     | api.base:get_course_point:286 - 课程章节读取成功...
+2025-09-21 10:26:43.046 | TRACE    | api.decode:decode_course_point:90 - 开始解码章节列表...
+2025-09-21 10:26:43.049 | INFO     | chaoxing.main:process_course:292 - 开始学习课程: 通用学术英语I
+2025-09-21 10:26:43.050 | TRACE    | api.base:get_course_point:283 - 开始读取课程所有章节...
+2025-09-21 10:26:43.234 | INFO     | api.base:get_course_point:286 - 课程章节读取成功...
+2025-09-21 10:26:43.234 | TRACE    | api.decode:decode_course_point:90 - 开始解码章节列表...
+2025-09-21 10:26:43.249 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 0
+2025-09-21 10:26:43.249 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 1.1 Critical Thinking
+2025-09-21 10:26:43.249 | INFO     | chaoxing.main:process_chapter:238 - 章节：1.1 Critical Thinking 已完成所有任务点
+2025-09-21 10:26:43.250 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 1
+2025-09-21 10:26:43.250 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 1.2 Reading
+2025-09-21 10:26:43.250 | INFO     | chaoxing.main:process_chapter:238 - 章节：1.2 Reading 已完成所有任务点
+2025-09-21 10:26:43.250 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 2
+2025-09-21 10:26:43.251 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 1.3 Listening &Speaking
+2025-09-21 10:26:43.251 | INFO     | chaoxing.main:process_chapter:238 - 章节：1.3 Listening &Speaking 已完成所有任务点
+2025-09-21 10:26:43.251 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 3
+2025-09-21 10:26:43.251 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 1.3.1 Video 1
+2025-09-21 10:26:43.251 | INFO     | chaoxing.main:process_chapter:238 - 章节：1.3.1 Video 1 已完成所有任务点
+2025-09-21 10:26:43.251 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 4
+2025-09-21 10:26:43.252 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 1.3.2 Video 2
+2025-09-21 10:26:43.252 | INFO     | chaoxing.main:process_chapter:238 - 章节：1.3.2 Video 2 已完成所有任务点
+2025-09-21 10:26:43.252 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 5
+2025-09-21 10:26:43.252 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 1.4 Writing
+2025-09-21 10:26:43.252 | INFO     | chaoxing.main:process_chapter:238 - 章节：1.4 Writing 已完成所有任务点
+2025-09-21 10:26:43.252 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 6
+2025-09-21 10:26:43.253 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 1.5 Vocabulary & Structure
+2025-09-21 10:26:43.253 | INFO     | chaoxing.main:process_chapter:238 - 章节：1.5 Vocabulary & Structure 已完成所有任务点
+2025-09-21 10:26:43.253 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 7
+2025-09-21 10:26:43.253 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 1.6 期末简答
+2025-09-21 10:26:43.253 | INFO     | chaoxing.main:process_chapter:238 - 章节：1.6 期末简答 已完成所有任务点
+2025-09-21 10:26:43.253 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 8
+2025-09-21 10:26:43.254 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 1.7 外研社 “国才杯”
+2025-09-21 10:26:43.254 | INFO     | chaoxing.main:process_chapter:238 - 章节：1.7 外研社 “国才杯” 已完成所有任务点
+2025-09-21 10:26:43.254 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 9
+2025-09-21 10:26:43.254 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 2.1 Critical Thinking
+2025-09-21 10:26:43.254 | DEBUG    | chaoxing.main:process_chapter:243 - 本次随机等待时间: 2.728s
+2025-09-21 10:26:45.984 | TRACE    | api.base:get_job_list:303 - 开始读取章节所有任务点...
+2025-09-21 10:26:46.189 | TRACE    | api.decode:decode_course_card:165 - 开始解码任务点列表...
+2025-09-21 10:26:46.190 | INFO     | api.base:get_job_list:308 - 该章节未开放
+2025-09-21 10:26:46.191 | INFO     | chaoxing.main:handle_not_open_chapter:198 - 章节 2.1 Critical Thinking 未开放，根据配置跳过此章节
+2025-09-21 10:26:46.191 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 10
+2025-09-21 10:26:46.191 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 2.2 Reading
+2025-09-21 10:26:46.192 | DEBUG    | chaoxing.main:process_chapter:243 - 本次随机等待时间: 1.327s
+2025-09-21 10:26:47.519 | TRACE    | api.base:get_job_list:303 - 开始读取章节所有任务点...
+2025-09-21 10:26:47.616 | TRACE    | api.decode:decode_course_card:165 - 开始解码任务点列表...
+2025-09-21 10:26:47.616 | INFO     | api.base:get_job_list:308 - 该章节未开放
+2025-09-21 10:26:47.617 | INFO     | chaoxing.main:handle_not_open_chapter:198 - 章节 2.2 Reading 未开放，根据配置跳过此章节
+2025-09-21 10:26:47.617 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 11
+2025-09-21 10:26:47.618 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 2.3 Listening &Speaking
+2025-09-21 10:26:47.618 | DEBUG    | chaoxing.main:process_chapter:243 - 本次随机等待时间: 2.603s
+2025-09-21 10:26:50.222 | TRACE    | api.base:get_job_list:303 - 开始读取章节所有任务点...
+2025-09-21 10:26:50.327 | TRACE    | api.decode:decode_course_card:165 - 开始解码任务点列表...
+2025-09-21 10:26:50.327 | INFO     | api.base:get_job_list:308 - 该章节未开放
+2025-09-21 10:26:50.328 | INFO     | chaoxing.main:handle_not_open_chapter:198 - 章节 2.3 Listening &Speaking 未开放，根据配置跳过此章节
+2025-09-21 10:26:50.328 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 12
+2025-09-21 10:26:50.329 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 2.3.1 Video 1
+2025-09-21 10:26:50.329 | DEBUG    | chaoxing.main:process_chapter:243 - 本次随机等待时间: 1.005s
+2025-09-21 10:26:51.335 | TRACE    | api.base:get_job_list:303 - 开始读取章节所有任务点...
+2025-09-21 10:26:51.433 | TRACE    | api.decode:decode_course_card:165 - 开始解码任务点列表...
+2025-09-21 10:26:51.434 | INFO     | api.base:get_job_list:308 - 该章节未开放
+2025-09-21 10:26:51.435 | INFO     | chaoxing.main:handle_not_open_chapter:198 - 章节 2.3.1 Video 1 未开放，根据配置跳过此章节
+2025-09-21 10:26:51.435 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 13
+2025-09-21 10:26:51.435 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 2.3.2 Video 2
+2025-09-21 10:26:51.435 | DEBUG    | chaoxing.main:process_chapter:243 - 本次随机等待时间: 2.844s
+2025-09-21 10:26:54.279 | TRACE    | api.base:get_job_list:303 - 开始读取章节所有任务点...
+2025-09-21 10:26:54.377 | TRACE    | api.decode:decode_course_card:165 - 开始解码任务点列表...
+2025-09-21 10:26:54.377 | INFO     | api.base:get_job_list:308 - 该章节未开放
+2025-09-21 10:26:54.378 | INFO     | chaoxing.main:handle_not_open_chapter:198 - 章节 2.3.2 Video 2 未开放，根据配置跳过此章节
+2025-09-21 10:26:54.378 | DEBUG    | chaoxing.main:process_course:308 - 当前章节 __point_index: 14
+2025-09-21 10:26:54.379 | INFO     | chaoxing.main:process_chapter:235 - 当前章节: 2.4 Writing
+2025-09-21 10:26:54.379 | DEBUG    | chaoxing.main:process_chapter:243 - 本次随机等待时间: 2.485s
