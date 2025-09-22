@@ -79,28 +79,6 @@ def test_gui_login_worker():
         traceback.print_exc()
         return False
 
-def test_cookies_and_cache():
-    """检查cookies和缓存情况"""
-    print("\n🔍 检查cookies和缓存")
-    print("=" * 50)
-    
-    cookies_file = "cookies.txt"
-    if os.path.exists(cookies_file):
-        print(f"✅ 找到cookies文件: {cookies_file}")
-        stat = os.stat(cookies_file)
-        print(f"   文件大小: {stat.st_size} bytes")
-        print(f"   修改时间: {stat.st_mtime}")
-    else:
-        print(f"⚠️ 未找到cookies文件: {cookies_file}")
-    
-    # 检查__pycache__
-    cache_dirs = ["__pycache__", "api/__pycache__", "gui/__pycache__"]
-    for cache_dir in cache_dirs:
-        if os.path.exists(cache_dir):
-            print(f"⚠️ 发现缓存目录: {cache_dir}")
-        else:
-            print(f"✅ 缓存目录已清理: {cache_dir}")
-
 def main():
     print("🧪 GUI登录功能完整测试")
     print("=" * 60)
@@ -108,24 +86,17 @@ def main():
     # 测试GUI登录逻辑
     login_success = test_gui_login_worker()
     
-    # 检查缓存情况
-    test_cookies_and_cache()
-    
     print("\n" + "=" * 60)
     if login_success:
         print("🎉 GUI登录功能测试通过!")
         print("✅ 建议: 重启GUI应用程序，应该能看到课程列表")
     else:
         print("❌ GUI登录功能测试失败")
-        print("💡 建议:")
-        print("   1. 重启Python解释器")
-        print("   2. 删除cookies.txt文件")
-        print("   3. 重新运行GUI应用")
     
-    print("\n🔧 额外建议:")
-    print("   - 完全关闭GUI应用程序")
-    print("   - 删除所有__pycache__目录")  
-    print("   - 重新启动应用程序")
+    print("\n🔧 重要提示:")
+    print("   1. 完全关闭GUI应用程序")
+    print("   2. 重新启动应用程序")
+    print("   3. 使用相同的账号密码登录")
 
 if __name__ == "__main__":
     try:
