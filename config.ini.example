@@ -1,0 +1,59 @@
+# 超星学习通自动化工具 - 配置文件示例
+# 使用方法：复制此文件为 config.ini，然后修改下面的配置
+
+[common]
+# 手机号（必填）
+username = 
+
+# 密码（必填）
+password = 
+
+# 是否使用 cookies 登录（可选，设为 true 则忽略账号密码）
+use_cookies = false
+
+# 要学习的课程ID列表，多个用逗号分隔（可选，留空则学习全部课程）
+# 例如: course_list = 123456,789012
+course_list = 
+
+# 视频播放速度（1.0-2.0）
+speed = 1.0
+
+# 同时进行的章节数
+jobs = 4
+
+# 遇到未开放章节的处理方式: retry-重试, continue-跳过
+notopen_action = retry
+
+
+[tiku]
+# 题库类型: ai, disable
+# ai - 使用 AI 大模型答题
+# disable - 禁用题库（不自动答题）
+type = ai
+
+# AI 题库配置（当 type=ai 时生效）
+# API 端点
+ai_endpoint = https://api.openai.com/v1
+
+# API 密钥
+ai_key = 
+
+# 模型名称
+ai_model = gpt-4o-mini
+
+# 请求间隔（秒）
+min_interval_seconds = 3
+
+# 题库覆盖率阈值（0-1），低于此值不提交答案
+cover_rate = 0.6
+
+
+[notification]
+# 通知类型: disable, pushplus, bark, dingtalk, feishu, wechat
+type = disable
+
+# PushPlus Token（当 type=pushplus 时）
+pushplus_token = 
+
+# Bark 推送地址（当 type=bark 时）
+bark_url = 

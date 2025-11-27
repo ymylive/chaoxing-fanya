@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            architecture: 'x64'
+            name: 'win64'
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.13'
+          architecture: ${{matrix.architecture}}
+
+      - name: Install requirements
+        run: |
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build win bin
+        run: pyinstaller -F main.py -n 'chaoxing' --add-data "resource;resource"
+
+      - name: Create release package
+        run: |
+          mkdir release
+          copy dist\chaoxing.exe release\
+          copy config_template.ini release\
+          cd release
+          7z a -tzip chaoxing.zip *
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.name }}
+          path: 'release/chaoxing.zip'
