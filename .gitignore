@@ -156,9 +156,6 @@ config*.ini
 cache.json
 web_config.json
 
-# PaddleOCR (too large, download separately)
-PaddleOCR/
-
 # Portable build
 chaoxing_portable/
 chaoxing_portable.zip
