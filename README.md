@@ -1,136 +1,133 @@
-# 超星学习通自动化刷课工具（精美 Web 界面版）
+﻿# 超星学习通自动化刷课工具（Web + CLI 全量可视化）
 
 <p align="center">
-  <a href="https://github.com/ymylive/chaoxing-fanya" target="_blank" style="margin-right: 20px; font-style: normal; text-decoration: none;">
-    <img src="https://img.shields.io/github/stars/ymylive/chaoxing-fanya" alt="Github Stars" />
+  <a href="https://github.com/ymylive/chaoxing-fanya" target="_blank">
+    <img src="https://img.shields.io/github/stars/ymylive/chaoxing-fanya" alt="GitHub Stars" />
   </a>
-  <a href="https://github.com/ymylive/chaoxing-fanya" target="_blank" style="margin-right: 20px; font-style: normal; text-decoration: none;">
-    <img src="https://img.shields.io/github/forks/ymylive/chaoxing-fanya" alt="Github Forks" />
+  <a href="https://github.com/ymylive/chaoxing-fanya" target="_blank">
+    <img src="https://img.shields.io/github/forks/ymylive/chaoxing-fanya" alt="GitHub Forks" />
   </a>
-  <a href="https://github.com/ymylive/chaoxing-fanya" target="_blank" style="margin-right: 20px; font-style: normal; text-decoration: none;">
-    <img src="https://img.shields.io/github/languages/code-size/ymylive/chaoxing-fanya" alt="Code-size" />
+  <a href="https://github.com/ymylive/chaoxing-fanya" target="_blank">
+    <img src="https://img.shields.io/github/license/ymylive/chaoxing-fanya" alt="License" />
+  </a>
+  <a href="https://github.com/ymylive/chaoxing-fanya" target="_blank">
+    <img src="https://img.shields.io/github/languages/code-size/ymylive/chaoxing-fanya" alt="Code Size" />
   </a>
 </p>
 
-> 基于 [Samueli924/chaoxing](https://github.com/Samueli924/chaoxing) 二次开发，增加完整 Web 界面与便携打包能力，向原作者致敬。
+> 基于 [Samueli924/chaoxing](https://github.com/Samueli924/chaoxing) 二次开发：补全 Web 可视化、OCR、题库、外部通知与便携打包能力，向原作者致敬。
 
-## 主要亮点
+## 功能亮点
 
-- 现代化 React + TailwindCSS Web 界面，100% 覆盖命令行全部功能
-- 一键启动脚本（Windows）与 Docker 支持，开箱即用
-- 集成本地 PaddleOCR 与外部视觉大模型，图片/验证码均可识别
-- 题库（言溪、LIKE、TikuAdapter、AI、硅基流动）与通知（Server 酱、Qmsg、Bark、Telegram）全量支持
-- 便携版打包脚本，免 Python 环境即可分发
+- **可视化覆盖 100% 功能**：React + TailwindCSS 前端，桌面/移动自适应，实时日志与进度
+- **一键上手**：Windows `start.bat` 检查依赖后即启动前后端；支持 Docker 与便携打包
+- **题库全家桶**：Yanxi / LIKE / TikuAdapter / AI / SiliconFlow，可调覆盖率与自动提交
+- **OCR 多方案**：内置 PaddleOCR 或外部大模型（OpenAI / Claude / Qwen / SiliconFlow 等）
+- **通知渠道**：Server酱 / Qmsg / Bark / Telegram 等完成 & 错误推送
+- **CLI 同步**：命令行模式与 Web 功能一致，便于集成与自动化
 
-## 快速开始（推荐）
+## 快速开始（推荐一键）
 
 ```bash
 git clone --depth=1 https://github.com/ymylive/chaoxing-fanya
 cd chaoxing-fanya
-start.bat  # Windows 双击或命令行运行，一键检查依赖并启动前后端
+start.bat  # Windows 双击或命令行运行
 ```
 
-启动后浏览器自动打开 http://localhost:3000，按界面提示登录并开始学习。
+启动后浏览器会自动打开 `http://localhost:3000`，按界面提示登录并开始学习。
 
-## 运行方式
+### 其他运行方式
 
-### 1) Windows 一键启动（推荐）
-- 双击或运行 `start.bat`，自动检查/安装 Python 与前端依赖，依次启动后端 (5000) 与前端 (3000)，并自动打开浏览器。
-
-### 2) 手动启动（前后端分开）
+**手动启动（前后端分开）**
 ```bash
-# 克隆仓库
-git clone --depth=1 https://github.com/ymylive/chaoxing-fanya
-cd chaoxing-fanya
-
 # 后端
 pip install -r requirements.txt
-python app.py            # 默认 http://localhost:5000
+python app.py        # 默认 http://localhost:5000
 
-# 前端（新终端窗口）
+# 前端（新终端）
 cd web
 npm install
-npm run dev              # 默认 http://localhost:3000
+npm run dev          # 默认 http://localhost:3000
 ```
 
-### 3) Docker
+**Docker**
 ```bash
 docker build -t chaoxing .
 
 # 使用默认模板
 docker run -it chaoxing
 
-# 指定自定义配置文件
+# 挂载自定义配置
 docker run -it -v /本地路径/config.ini:/config/config.ini chaoxing
 ```
-- 首次运行自动将 `config_template.ini` 复制到 `/config/config.ini`；可挂载自定义配置。
+- 首次运行会将 `config_template.ini` 复制到 `/config/config.ini`，可自行覆盖挂载。
 
-### 4) 便携版打包
+**便携打包**
 ```bash
 clean_and_build_portable.bat
 ```
-生成的 `chaoxing_portable` 可直接分发，无需安装 Python。
+生成 `chaoxing_portable` 目录，免安装 Python 直接分发。
 
-### 5) 命令行模式
+**命令行模式**
 ```bash
 python main.py                               # 使用默认配置模板
-python main.py -c config.ini                 # 指定配置文件
+python main.py -c config.ini                 # 指定配置
 python main.py -u 手机号 -p 密码 -l 课程ID1,课程ID2 -a [retry|ask|continue]
 ```
 
-## 配置要点
+## 配置要点（config.ini）
 
-### 题库 `[tiku]`
-- provider：`Yanxi` / `Like` / `TikuAdapter` / `AI` / `SiliconFlow`（大小写保持与实现类一致）
-- 题库覆盖率：0.0-1.0；提交模式 `submit=true|false`
-- 不配置题库则跳过需答题的章节检测；有章节解锁需求的课程必须配置题库。
+- **登录**：支持账号密码或 cookies.txt（同后端配置说明）
+- **题库 `[tiku]`**：`provider=Yanxi|Like|TikuAdapter|AI|SiliconFlow`；`cover_rate=0.0-1.0`；`submit=true|false`
+- **未开放任务处理 `[common]`**：`notopen_action=retry|ask|continue`（命令行可用 `-a/--notopen-action` 覆盖）
+- **通知 `[notify]`**：`provider=ServerChan|Qmsg|Bark|Telegram`，按注释填写 `url` / `token` / `chat_id` 等
+- **OCR**：
+  - 本地 PaddleOCR：安装 `paddlepaddle`、`paddlex`，并设置 `CHAOXING_ENABLE_OCR=1`
+  - 外部大模型（推荐）：
+    ```bash
+    export CHAOXING_VISION_OCR_PROVIDER=openai
+    export CHAOXING_VISION_OCR_KEY=sk-your-api-key
+    export CHAOXING_VISION_OCR_MODEL=gpt-4o
+    # 可选：CHAOXING_VISION_OCR_ENDPOINT, CHAOXING_VISION_OCR_PROMPT
+    ```
 
-### 已关闭任务点处理 `[common]`
-- `notopen_action=retry|ask|continue`
-- 命令行可用 `-a` 或 `--notopen-action` 覆盖。
+更多详细说明见 `WEB_FRONTEND_GUIDE.md`、`QUICKSTART.md`、`FEATURE_COMPARISON.md`、`WEB_FEATURES.md`。
 
-### 外部通知 `[notify]`
-- provider：`ServerChan` / `Qmsg` / `Bark` / `Telegram` 等，按注释填入 `url` 等参数。
+## 使用流程
 
-### 图片 OCR
-1) 本地 PaddleOCR：安装 `paddlepaddle`、`paddlex`，并设置 `CHAOXING_ENABLE_OCR=1`。
-2) 外部视觉大模型（推荐）：环境变量示例：
-   ```bash
-   export CHAOXING_VISION_OCR_PROVIDER=openai
-   export CHAOXING_VISION_OCR_KEY=sk-your-api-key
-   export CHAOXING_VISION_OCR_MODEL=gpt-4o
-   # 可选：CHAOXING_VISION_OCR_ENDPOINT, CHAOXING_VISION_OCR_PROMPT
-   ```
-   内置支持 `openai` / `claude` / `qwen` / `siliconflow` / `openai_compatible`。
+1) 登录：手机号+密码或上传 cookies  
+2) 选课：多选或默认全部课程  
+3) 配置：倍速、并发、题库、通知、OCR  
+4) 开始：一键启动任务，实时查看进度/日志  
+5) 监控：完成/异常自动推送（如启用通知）
 
 ## 目录速览
 
 ```
 chaoxing/
-├── app.py                # Flask 后端（Web 入口）
-├── main.py               # 命令行入口
-├── start.bat             # 一键启动脚本
+├── app.py                      # Flask 后端入口
+├── main.py                     # 命令行入口
+├── start.bat                   # Windows 一键启动
 ├── clean_and_build_portable.bat
-├── config_template.ini   # 配置模板
-├── api/                  # 后端接口
-├── web/                  # 前端（React + Vite + TailwindCSS）
-└── resource/             # 静态资源、模型等
+├── config_template.ini         # 配置模板
+├── api/                        # 后端接口
+├── web/                        # 前端（React + Vite + TailwindCSS）
+└── resource/                   # 静态资源、模型等
 ```
-
-更多细节请参见：`WEB_FRONTEND_GUIDE.md`、`QUICKSTART.md`、`FEATURE_COMPARISON.md`、`WEB_FEATURES.md`、`DEPENDENCIES.md`。
 
 ## 常见问题
 
-- 端口被占用：`netstat -ano | findstr :5000` / `findstr :3000`，结束占用进程后重试。
-- 依赖安装失败：后端 `pip install -r requirements.txt --force-reinstall`；前端删除 `node_modules` 与 `package-lock.json` 后 `npm install`。
-- 浏览器未自动打开：手动访问 http://localhost:3000 或检查启动脚本输出。
+- 端口被占用：`netstat -ano | findstr :5000` / `:3000`，结束占用进程后重试
+- 依赖安装失败：后端 `pip install -r requirements.txt --force-reinstall`；前端删除 `node_modules` 与锁文件后重新 `npm install`
+- 浏览器未自动打开：手动访问 `http://localhost:3000`，查看启动脚本输出
+- Docker 配置未生效：确认挂载路径正确，或在容器内检查 `/config/config.ini`
 
 ## 致谢
 
-- 原项目作者 [Samueli924/chaoxing](https://github.com/Samueli924/chaoxing)
-- 社区贡献者与所有使用者
+- 原项目：[Samueli924/chaoxing](https://github.com/Samueli924/chaoxing)
+- 社区贡献者与所有用户
 
-## 许可证与声明
+## 许可与声明
 
-- 许可证：GPL-3.0，仅允许在相同许可证下开源/免费使用与再分发；禁止闭源商业化与任何盈利行为。
-- 本项目仅供学习交流，使用者须自行承担法律与合规责任。
+- 许可证：GPL-3.0，仅允许在相同许可证下开源免费使用与再分发，禁止闭源商业化及任何盈利行为
+- 本项目仅供学习交流，使用者需自行承担法律与合规责任
